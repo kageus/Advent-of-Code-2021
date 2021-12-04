@@ -19,28 +19,3 @@ lifeSupportRating = binaryStringToInt(carbonDioxRating[0]) * binaryStringToInt(o
 
 print(f"{binaryStringToInt(oxygenRating[0])} * {binaryStringToInt(carbonDioxRating[0])} =")
 print(f"{lifeSupportRating}")
-
-
-
-
-
-
-
-# # epsilon is inverted gamma 
-# for i in range(bitCount):
-#     if gammaRate[i] == '1':
-#         epsilonRate += '0'
-#     else:
-#         epsilonRate += '1'
-
-# # convert to integers
-# gammaInt   = int(f"0b{gammaRate}", 2)
-# epsilonInt = int(f"0b{epsilonRate}", 2)
-
-# powerConsumption = gammaInt * epsilonInt 
-
-
-# print(f"{gammaInt}")
-# print(f"{epsilonInt}")
-# print(f"{powerConsumption}")
-
