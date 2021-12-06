@@ -1,34 +1,29 @@
-from collections import Counter
+# refactored for scale
+from collections import Counter, defaultdict
 dataInput = open("./input/input_6.txt").read().split(",")
 
 fishGroup   = [int(x) for x in dataInput]
-fishCount   = Counter(fishGroup)
-fishDict    = dict(fishCount)
+fishDict    = defaultdict(int)
+for i in fishGroup:
+    fishDict[i] += 1
+updatedFish = defaultdict(int)
 
-updatedFish = {}
-
-days        = 256
-day = 1
+days    = 256
+day     = 1
 
 while day <= days:
     for key, value in fishDict.items():
         if key == 0:
-            if(updatedFish.get(6)):
-                updatedFish[6] = value + updatedFish[6]
-            else:
-                updatedFish[6]      = value
-            updatedFish[8]      = value
+            updatedFish[6] = value + updatedFish[6]
+            updatedFish[8] = value
         else:
-            if(updatedFish.get(key -1)):
-                updatedFish[key -1] = value + updatedFish[key - 1]
-            else:
-                updatedFish[key - 1] = value
-    fishDict = updatedFish
-    updatedFish = {}
+            updatedFish[key -1] = value + updatedFish[key - 1]
+    fishDict = updatedFish.copy()
+    updatedFish.clear()
     day += 1
 
 sum = 0
 print(fishDict)
 for value in fishDict.values():
     sum += value
-print(sum)
+print(sum) # 1749945484935

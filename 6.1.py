@@ -1,3 +1,4 @@
+# quick dirty and totally unscalable
 dataInput = open("./input/input_6.txt").read().split(",")
 
 fishGroup   = [int(x) for x in dataInput]
