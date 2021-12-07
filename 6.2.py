@@ -1,5 +1,5 @@
 # refactored for scale
-from collections import Counter, defaultdict
+from collections import defaultdict
 dataInput = open("./input/input_6.txt").read().split(",")
 
 fishGroup   = [int(x) for x in dataInput]
